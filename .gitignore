@@ -28,3 +28,4 @@ dist/
 server.pem
 build/
 .secret
+.yarn
