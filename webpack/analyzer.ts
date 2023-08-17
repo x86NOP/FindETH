@@ -1,5 +1,5 @@
 import production from './production';
-import { smart } from 'webpack-merge';
+import smart from 'webpack-merge';
 import { Configuration } from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 

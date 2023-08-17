@@ -1,5 +1,5 @@
 import common from './common';
-import { smart } from 'webpack-merge';
+import smart from 'webpack-merge';
 import { Configuration } from 'webpack';
 import ForkCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HardSourceWebpackPlugin from 'hard-source-webpack-plugin';

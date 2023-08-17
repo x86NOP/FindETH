@@ -1,5 +1,5 @@
 import common from './common';
-import { smart } from 'webpack-merge';
+import smart from 'webpack-merge';
 import { Configuration } from 'webpack';
 import { join } from 'path';
 
@@ -22,7 +22,7 @@ const configuration: Configuration = {
   plugins: [
     new FaviconsWebpackPlugin({
       logo: join(__dirname, '../src/assets/images/logos/findeth/findeth-white.png'),
-      prefix: 'assets/icons-[hash]/',
+      prefix: 'assets/icons-[fullhash]/',
       persistentCache: true,
       title: 'FindETH',
       icons: {
@@ -38,7 +38,11 @@ const configuration: Configuration = {
       'connect-src': `https://api.mycryptoapi.com/eth https://mainnet.infura.io https://api.etherscan.io`,
       'frame-src': `'self' https://connect.trezor.io/`
     }),
-    new SitemapWebpackPlugin('https://findeth.io', SITEMAP_PATHS),
+    new SitemapWebpackPlugin({
+      base: 'https://findeth.io',
+      paths: SITEMAP_PATHS,
+      options: { lastmod: true}
+    }),
     new RobotsPlugin({
       policy: [
         {
